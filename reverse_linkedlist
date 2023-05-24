@@ -1,0 +1,10 @@
+class Solution(object):
+    def reverseList(self, head):
+        cur = head
+        prev = None
+        while cur != None :
+            next_node = cur.next
+            cur.next = prev
+            prev=cur
+            cur = next_node
+        return prev
