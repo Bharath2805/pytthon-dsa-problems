@@ -1,0 +1,23 @@
+# celebrity problem ( stack )
+
+def find_the_celebrity(L):
+  n = len(L)
+  s = []
+
+  # push elements into stack(s)
+  for i in range(L):
+    s.append(i)
+  while  len(s)>1:
+    i = s.pop()
+    j = s.pop()
+
+    if int([i][j] == 0):
+      s.append(i)
+    else:
+      s.append(j)
+  celebrity  = s.pop()
+  for i in range(L):
+    if int(L[i][celebrity]) == 0  or int(l[celebrity][i] ) == 1 :
+      print("no one is celebrity")
+      return
+  print("celebrity is ", celebrity)
