@@ -1,0 +1,18 @@
+def textEditor(text,pattern):
+    u = []
+    r = []
+
+    for i in text :
+        u.append(i)
+    for i in pattern :
+        if i == u :
+            data = u.pop()
+            r.append(data)
+        else:
+            data = r.pop()
+            u.append(data)
+    res= " "
+    while u :
+        res = u.pop() + res
+
+    print(res)
